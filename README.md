@@ -4,7 +4,12 @@ AI agent setup to work on the [**Kraft**SQL](https://github.com/kraftsql) projec
 
 ## Structure
 
-This repository itself contains the setup for AI agent development tools.
+This repository itself contains the tool setup to work on **Kraft**SQL, especially to work with AI agents.
+
+- [.agents/](.agents): general, vendor-agnostic AI tooling configuration
+- [.claude/](.claude/), etc.: extra proprietary config for certain AI tools
+- [.adr/](.adr): Architecture Decision Records (ADRs)
+
 The other **Kraft**SQL repositories are meant to be cloned inside this workspace, so they can be searched and authored together, sharing this setup.
 
 ## Agentic tooling
