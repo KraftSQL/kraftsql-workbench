@@ -23,7 +23,9 @@ Each step can be performed by a human or by the corresponding [skill](.agents/sk
 2. **Plan** ([plan](.agents/skills/plan/SKILL.md)):
    starting from the spec commit, mark the necessary code changes with `// TODO(plan) step N: ...` comments,
    split into self-contained steps, beginning with the reference test.
-3. **Implement**: work through the planned steps one by one, until all spec'ed test cases pass and no `TODO(plan)` is left.
+3. **Implement** ([implement](.agents/skills/implement/SKILL.md)):
+   work through the planned steps one by one, with one commit per step,
+   until all spec'ed test cases pass and no `TODO(plan)` is left.
 4. **Review**: review the implementation against the spec.
 
 ## Agentic tooling
