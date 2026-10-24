@@ -22,9 +22,9 @@ The result is a change set that a human can review like any other code change, a
   }
   ```
   - Name each test in the style of the existing tests: a full sentence stating the expected behaviour.
-  - The **reference test suite** ([kraftsql/kraftsql/src/referenceTest/](../../../kraftsql/kraftsql/src/referenceTest)) specifies the semantics of KraftSQL's API, which every `Engine` must fulfil.
-    Prefer it for everything observable through an `Engine`.
   - Unit tests (`src/test/`) specify behaviour independent of any `Engine`, e.g. validation in constructors.
+  - The **reference test suite** ([kraftsql/kraftsql/src/referenceTest/](../../../kraftsql/kraftsql/src/referenceTest)) runs a smoke-test for the semantics of KraftSQL's API, which every `Engine` must fulfil.
+    Comes on top to the detailed unit tests.
   - Connector repositories (e.g. `kraftsql-bigquery`) get test cases only for their connector-specific extensions or translation details.
 
 The spec does not need to compile.
