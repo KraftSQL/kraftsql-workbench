@@ -17,7 +17,7 @@ The result is a change set that a human can review like any other code change, a
   - Add comments only. Don't implement anything and don't change code, so everything still compiles as before.
 - **Steps**: split the changes into a sequence of self-contained steps that are easy to follow in a later review.
   Each step covers one cohesive change, e.g. one module or connector, together with its tests.
-  - **Step 1 is always the reference test** ([kraftsql/kraftsql/src/referenceTest/](../../../kraftsql/kraftsql/src/referenceTest)):
+  - **Step 1 is always the reference test** ([kraftsql-core/kraftsql/src/referenceTest/](../../../kraftsql-core/kraftsql/src/referenceTest)):
     implementing the spec'ed reference test cases first, which are expected to fail until the following steps make them pass.
     Note this expectation in the step's TODO.
   - Then the core library, followed by the connectors and their tests.
