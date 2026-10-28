@@ -11,6 +11,8 @@ The result is a change set that a human can review like any other code change, a
 - **API**: user-facing classes, interfaces, functions, properties, etc. are created or altered with their signatures.
   Bodies of new functions are not implemented, but only `TODO()`. Existing implementations stay untouched.
 - **KDoc**: each user-facing element describes its behaviour and semantics, including parameters, return values, and failures.
+- **Design decisions**: The reasons, why KraftSQL is designed the way it is, are usually not relevant for the users, but for the implementation and further development.
+  Hence, they are kept as comments at the interface, classes, functions, etc. where the decision is implemented.
 - **Examples**: usage of the feature from a user's point of view, written in the [examples](../../../kraftsql/examples) module.
   Write them before fixing the signatures, to check that the API is Kotlin-idiomatic and type-safe, e.g. needs no casts.
 - **Documentation**: READMEs and the [documentation wiki](../../../documentation.wiki) are updated where users would look for the feature.
