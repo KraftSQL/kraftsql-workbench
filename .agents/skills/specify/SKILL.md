@@ -10,12 +10,18 @@ The result is a change set that a human can review like any other code change, a
 
 - **API**: user-facing classes, interfaces, functions, properties, etc. are created or altered with their signatures.
   Bodies of new functions are not implemented, but only `TODO()`. Existing implementations stay untouched.
+  New abstract members of an interface get `TODO()` overrides with KDoc in all its implementations in the workbench,
+  including the [examples](../../../kraftsql-core/examples) module, e.g. a new `Engine` method in every connector's `Engine`.
 - **KDoc**: each user-facing element describes its behaviour and semantics, including parameters, return values, and failures.
 - **Design decisions**: The reasons, why KraftSQL is designed the way it is, are usually not relevant for the users, but for the implementation and further development.
   Hence, they are kept as comments at the interface, classes, functions, etc. where the decision is implemented.
-- **Examples**: usage of the feature from a user's point of view, written in the [examples](../../../kraftsql/examples) module.
+  This includes internal design decisions made by the user, e.g. that a connector uses its engine's API instead of SQL.
+- **Not part of the spec**: how a connector implements the behaviour, e.g. API calls vs. SQL statements, or helper functions of an SQL generator.
+  Don't put it into signatures, KDoc, test names or documentation, unless the user decides it.
+- **Examples**: usage of the feature from a user's point of view, written in the [examples](../../../kraftsql-core/examples) module.
   Write them before fixing the signatures, to check that the API is Kotlin-idiomatic and type-safe, e.g. needs no casts.
-- **Documentation**: READMEs and the [documentation wiki](../../../documentation.wiki) are updated where users would look for the feature.
+- **Documentation**: user documentation goes into the [documentation wiki](../../../documentation.wiki), where users would look for the feature.
+  READMEs hold only developer documentation, e.g. how to build, test or configure the test setup, never user documentation.
 - **Test cases**: defined only by their descriptive, human-readable name in backticks, never implemented:
   ```kotlin
   @Test
@@ -27,7 +33,10 @@ The result is a change set that a human can review like any other code change, a
   - Unit tests (`src/test/`) specify behaviour independent of any `Engine`, e.g. validation in constructors.
   - The **reference test suite** ([kraftsql-core/kraftsql/src/referenceTest/](../../../kraftsql-core/kraftsql/src/referenceTest)) runs a smoke-test for the semantics of KraftSQL's API, which every `Engine` must fulfil.
     Comes on top to the detailed unit tests.
-  - Connector repositories (e.g. `kraftsql-bigquery`) get test cases only for their connector-specific extensions or translation details.
+  - Connector repositories (e.g. `kraftsql-bigquery`) get test cases only for their connector-specific extensions or translation details,
+    which are observable through the `Engine`, e.g. the native types of created columns, not the mechanism.
+  - If the reference tests need state in the engine, e.g. a namespace for tables, specify its configuration in the
+    reference test suite, and its setup and teardown in each connector's suite.
 
 The spec does not need to compile.
 If it changes signatures, adapting their existing usages is left to the implementation.
