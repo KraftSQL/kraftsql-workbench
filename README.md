@@ -1,4 +1,4 @@
-# [EXPERIMENTAL] **Kraft**SQL Workbench
+# \[EXPERIMENTAL\] **Kraft**SQL Workbench
 
 Developer setup to work on the [**Kraft**SQL](https://github.com/kraftsql) project, especially with AI tooling.
 
