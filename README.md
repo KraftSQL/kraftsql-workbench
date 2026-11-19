@@ -1,10 +1,13 @@
-# KraftSQL Agentic Workbench
+# [EXPERIMENTAL] **Kraft**SQL Workbench
 
-AI agent setup to work on the [**Kraft**SQL](https://github.com/kraftsql) project.
+Developer setup to work on the [**Kraft**SQL](https://github.com/kraftsql) project, especially with AI tooling.
+
+> The "workbench" metaphor refers to a craftsman's workbench, where the work happens:
+> the **Kraft**SQL repositories are placed on it as workpieces, with all the tools in reach.
 
 ## Structure
 
-This repository itself contains the tool setup to work on **Kraft**SQL, especially to work with AI agents.
+This repository itself contains context and tooling to work on **Kraft**SQL, especially to work with AI agents.
 
 - [.agents/](.agents): general, vendor-agnostic AI tooling configuration
 - [.claude/](.claude/), etc.: extra proprietary config for certain AI tools
