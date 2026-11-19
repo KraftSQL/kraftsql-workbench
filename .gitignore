@@ -1,2 +1,9 @@
+# KraftSQL repositories:
+.github
+kraftsql-core/
+kraftsql-bigquery/
+documentation/
+documentation.wiki/
+
 .idea/
 *.iml
