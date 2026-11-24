@@ -2,6 +2,7 @@
 .github
 kraftsql-core/
 kraftsql-bigquery/
+kraftsql-bigquery-itest-infrastructure/
 documentation/
 documentation.wiki/
 
